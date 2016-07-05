@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack-dev-server --hot --inline --progress --colors",
     "build": "webpack --progress --colors",
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint src"
   },
   "jest": {
     "unmockedModulePathPatterns": [
