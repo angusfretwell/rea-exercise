@@ -30,6 +30,9 @@ export default {
       }, {
         test: /\.html$/,
         loader: 'file?name=[name].[ext]',
+      }, {
+        test: /\.json$/,
+        loader: 'json',
       },
     ],
   },
