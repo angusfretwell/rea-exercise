@@ -5,7 +5,7 @@ export default {
   context: path.join(__dirname, '/src'),
 
   entry: {
-    jsx: './index.jsx',
+    js: './index.js',
     html: './index.html',
   },
 
@@ -24,7 +24,7 @@ export default {
           'postcss',
         ],
       }, {
-        test: /\.(js|jsx)$/,
+        test: /\.(js)$/,
         loaders: ['react-hot', 'babel'],
         include: path.join(__dirname, 'src'),
       }, {
