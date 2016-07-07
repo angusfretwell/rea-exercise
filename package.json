@@ -6,10 +6,14 @@
   "scripts": {
     "start": "webpack-dev-server --hot --inline --progress --colors",
     "build": "webpack --progress --colors",
-    "test": "jest",
+    "test": "node --harmony_proxies node_modules/.bin/jest",
     "lint": "eslint src"
   },
   "jest": {
+    "moduleNameMapper": {
+      "^.+\\.(css|less)$": "<rootDir>/src/__tests__/styleMock.js",
+      "^.+\\.(gif|ttf|eot|svg)$": "<rootDir>/src/__tests__/fileMock.js"
+    },
     "unmockedModulePathPatterns": [
       "<rootDir>/node_modules/react/",
       "<rootDir>/node_modules/react-dom/",
@@ -43,6 +47,7 @@
     "eslint-plugin-jsx-a11y": "^1.5.3",
     "eslint-plugin-react": "^5.2.2",
     "file-loader": "^0.9.0",
+    "identity-obj-proxy": "^2.0.0",
     "jest-cli": "^13.1.0",
     "json-loader": "^0.5.4",
     "postcss-loader": "^0.9.1",
