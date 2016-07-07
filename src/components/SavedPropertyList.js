@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from '../styles.css';
-
 import PropertyCard from './PropertyCard';
 
 const propTypes = {

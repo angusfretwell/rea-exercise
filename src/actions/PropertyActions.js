@@ -1,5 +1,4 @@
 import alt from '../alt';
-
 import PropertySource from '../sources/PropertySource';
 
 class PropertyActions {

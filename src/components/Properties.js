@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from '../styles.css';
-
 import PropertyList from './PropertyList';
 import SavedPropertyList from './SavedPropertyList';
 import PropertyStore from '../stores/PropertyStore';
