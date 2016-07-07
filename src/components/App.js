@@ -1,23 +1,24 @@
 import React from 'react';
 
 import PropertyList from './PropertyList';
+import fixtures from '../fixtures.json';
 
-const propTypes = {
-  results: React.PropTypes.array,
-  saved: React.PropTypes.array,
-};
+export default class App extends React.Component {
+  constructor(props) {
+    super(props);
 
-class App extends React.Component {
+    this.state = {
+      results: fixtures.results,
+      saved: fixtures.saved,
+    };
+  }
+
   render() {
     return (
       <div>
         <h1>Properties</h1>
-        <PropertyList properties={this.props.results} />
+        <PropertyList properties={this.state.results} />
       </div>
     );
   }
 }
-
-App.propTypes = propTypes;
-
-export default App;
