@@ -3,15 +3,18 @@ import React from 'react';
 import PropertyList from './PropertyList';
 import SavedPropertyList from './SavedPropertyList';
 import PropertyStore from '../stores/PropertyStore';
+import PropertyActions from '../actions/PropertyActions';
 
 export default class Properties extends React.Component {
   constructor(props) {
     super(props);
+    this.onChange = this.onChange.bind(this);
     this.state = PropertyStore.getState();
   }
 
   componentDidMount() {
     PropertyStore.listen(this.onChange);
+    PropertyActions.fetchProperties();
   }
 
   componentWillUnmount() {
@@ -23,6 +26,18 @@ export default class Properties extends React.Component {
   }
 
   render() {
+    if (this.state.errorMessage) {
+      return (
+        <div>Something went wrong</div>
+      );
+    }
+
+    if (!this.state.properties.length) {
+      return (
+        <div>Loading...</div>
+      );
+    }
+
     return (
       <div>
         <h1>Properties</h1>
