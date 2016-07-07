@@ -4,7 +4,7 @@ import PropertyList from './PropertyList';
 import SavedPropertyList from './SavedPropertyList';
 import fixtures from '../fixtures.json';
 
-export default class App extends React.Component {
+export default class Properties extends React.Component {
   constructor(props) {
     super(props);
 
