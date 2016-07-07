@@ -10,6 +10,7 @@ class SavedPropertyList extends React.Component {
   render() {
     const propertyCardNodes = this.props.properties.map((property) => (
       <PropertyCard
+        id={Number(property.id)}
         key={property.id}
         price={property.price}
         agency={property.agency}

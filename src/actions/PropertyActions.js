@@ -25,12 +25,12 @@ class PropertyActions {
     return properties;
   }
 
-  saveProperty(property) {
-    return property;
+  saveProperty(propertyId) {
+    return propertyId;
   }
 
-  removeProperty(property) {
-    return property;
+  removeProperty(propertyId) {
+    return propertyId;
   }
 }
 
