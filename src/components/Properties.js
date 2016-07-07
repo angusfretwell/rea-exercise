@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from '../styles.css';
 
 import PropertyList from './PropertyList';
 import SavedPropertyList from './SavedPropertyList';
@@ -34,13 +35,12 @@ export default class Properties extends React.Component {
 
     if (!this.state.properties.length) {
       return (
-        <div>Loading...</div>
+        <p>Loading...</p>
       );
     }
 
     return (
-      <div>
-        <h1>Properties</h1>
+      <div className={styles.container}>
         <PropertyList properties={this.state.properties} />
         <SavedPropertyList properties={this.state.saved} />
       </div>

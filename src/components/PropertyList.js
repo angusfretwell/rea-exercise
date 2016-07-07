@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from '../styles.css';
 
 import PropertyCard from './PropertyCard';
 
@@ -19,7 +20,7 @@ class PropertyList extends React.Component {
     ));
 
     return (
-      <div>
+      <div className={styles.containerColumn}>
         <h2>Results</h2>
         {propertyCardNodes}
       </div>

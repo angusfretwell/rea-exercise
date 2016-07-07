@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from '../styles.css';
 
 import PropertyActions from '../actions/PropertyActions';
 import AgencyBanner from './AgencyBanner';
@@ -27,14 +28,33 @@ class PropertyCard extends React.Component {
   }
 
   render() {
+    let actionButton = (
+      <button
+        onClick={this.saveProperty}
+        className={`${styles.button} ${styles.cardButton}`}
+      >Save property</button>
+    );
+
+    if (this.props.isSaved) {
+      actionButton = (
+        <button
+          onClick={this.removeProperty}
+          className={`${styles.button} ${styles.cardButton}`}
+        >Remove property</button>
+    );
+    }
+
     return (
-      <div onClick={this.props.isSaved ? this.removeProperty : this.saveProperty}>
+      <div
+        className={styles.card}
+      >
         <AgencyBanner
           color={this.props.agency.brandingColors.primary}
           logo={this.props.agency.logo}
         />
-        <img src={this.props.image} role={'presentation'} />
-        <p>{this.props.price}</p>
+        <img src={this.props.image} role={'presentation'} className={styles.cardImage} />
+        <p className={styles.cardText}>{this.props.price}</p>
+        {actionButton}
       </div>
     );
   }
