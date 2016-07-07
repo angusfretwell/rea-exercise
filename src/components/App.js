@@ -1,6 +1,7 @@
 import React from 'react';
 
 import PropertyList from './PropertyList';
+import SavedPropertyList from './SavedPropertyList';
 import fixtures from '../fixtures.json';
 
 export default class App extends React.Component {
@@ -18,6 +19,7 @@ export default class App extends React.Component {
       <div>
         <h1>Properties</h1>
         <PropertyList properties={this.state.results} />
+        <SavedPropertyList properties={this.state.saved} />
       </div>
     );
   }
