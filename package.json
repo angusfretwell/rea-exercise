@@ -10,11 +10,13 @@
     "lint": "eslint src"
   },
   "jest": {
+    "testRegex": "__tests__/.*-test\\.js$",
     "moduleNameMapper": {
-      "^.+\\.(css|less)$": "<rootDir>/src/__tests__/styleMock.js",
-      "^.+\\.(gif|ttf|eot|svg)$": "<rootDir>/src/__tests__/fileMock.js"
+      "^.+\\.css$": "<rootDir>/src/__tests__/styleMock.js"
     },
     "unmockedModulePathPatterns": [
+      "<rootDir>/src/alt.js",
+      "<rootDir>/node_modules/alt/",
       "<rootDir>/node_modules/react/",
       "<rootDir>/node_modules/react-dom/",
       "<rootDir>/node_modules/react-addons-test-utils/"
