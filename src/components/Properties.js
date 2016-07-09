@@ -1,28 +1,28 @@
 import React from 'react';
 import styles from '../styles.css';
+import connectToStores from 'alt-utils/lib/connectToStores';
 import PropertyList from './PropertyList';
 import SavedPropertyList from './SavedPropertyList';
 import PropertyStore from '../stores/PropertyStore';
 import PropertyActions from '../actions/PropertyActions';
 
-export default class Properties extends React.Component {
-  constructor(props) {
-    super(props);
-    this.onChange = this.onChange.bind(this);
-    this.state = PropertyStore.getState();
+const propTypes = {
+  error: React.PropTypes.object,
+  properties: React.PropTypes.array.isRequired,
+  saved: React.PropTypes.array.isRequired,
+};
+
+export class Properties extends React.Component {
+  static getStores() {
+    return [PropertyStore];
+  }
+
+  static getPropsFromStores() {
+    return PropertyStore.getState();
   }
 
   componentDidMount() {
-    PropertyStore.listen(this.onChange);
     PropertyActions.fetchProperties();
-  }
-
-  componentWillUnmount() {
-    PropertyStore.unlisten(this.onChange);
-  }
-
-  onChange(state) {
-    this.setState(state);
   }
 
   render() {
@@ -32,7 +32,7 @@ export default class Properties extends React.Component {
       );
     }
 
-    if (!this.state.properties.length) {
+    if (!this.props.properties.length) {
       return (
         <p>Loading...</p>
       );
@@ -40,9 +40,13 @@ export default class Properties extends React.Component {
 
     return (
       <div className={styles.container}>
-        <PropertyList properties={this.state.properties} />
-        <SavedPropertyList properties={this.state.saved} />
+        <PropertyList properties={this.props.properties} />
+        <SavedPropertyList properties={this.props.saved} />
       </div>
     );
   }
 }
+
+Properties.propTypes = propTypes;
+
+export default connectToStores(Properties);
