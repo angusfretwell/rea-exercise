@@ -1,5 +1,5 @@
-rea-test
-========
+rea-exercise
+============
 
 Usage
 -----
