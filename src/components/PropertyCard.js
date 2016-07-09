@@ -4,7 +4,7 @@ import PropertyActions from '../actions/PropertyActions';
 import AgencyBanner from './AgencyBanner';
 
 const propTypes = {
-  id: React.PropTypes.number.isRequired,
+  id: React.PropTypes.string.isRequired,
   price: React.PropTypes.string.isRequired,
   agency: React.PropTypes.object.isRequired,
   image: React.PropTypes.string.isRequired,

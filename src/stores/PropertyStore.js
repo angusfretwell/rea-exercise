@@ -21,15 +21,15 @@ class PropertyStore {
   }
 
   handleSaveProperty(id) {
-    const property = this.properties.find(x => Number(x.id) === id);
+    const property = this.properties.find(x => x.id === id);
 
-    if (!this.saved.find(x => Number(x.id) === id)) {
+    if (!this.saved.find(x => x.id === id)) {
       this.saved.push(property);
     }
   }
 
   handleRemoveProperty(id) {
-    const property = this.saved.find(x => Number(x.id) === id);
+    const property = this.saved.find(x => x.id === id);
     this.saved.splice(this.saved.indexOf(property), 1);
   }
 
