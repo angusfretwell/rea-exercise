@@ -40,7 +40,7 @@ class PropertyCard extends React.Component {
           onClick={this.removeProperty}
           className={`${styles.button} ${styles.cardButton}`}
         >Remove property</button>
-    );
+      );
     }
 
     return (
