@@ -2,6 +2,10 @@ import alt from '../alt';
 import PropertySource from '../sources/PropertySource';
 
 class PropertyActions {
+  constructor() {
+    this.generateActions('propertiesFailed', 'updateProperties', 'saveProperty', 'removeProperty');
+  }
+
   fetchProperties() {
     return (dispatch) => {
       dispatch();
@@ -14,22 +18,6 @@ class PropertyActions {
           this.propertiesFailed(errorMessage);
         });
     };
-  }
-
-  propertiesFailed(errorMessage) {
-    return errorMessage;
-  }
-
-  updateProperties(properties) {
-    return properties;
-  }
-
-  saveProperty(propertyId) {
-    return propertyId;
-  }
-
-  removeProperty(propertyId) {
-    return propertyId;
   }
 }
 
