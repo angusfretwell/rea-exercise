@@ -14,8 +14,8 @@ class PropertyActions {
         .then((properties) => {
           this.updateProperties(properties);
         })
-        .catch((errorMessage) => {
-          this.propertiesFailed(errorMessage);
+        .catch((error) => {
+          this.propertiesFailed(error);
         });
     };
   }

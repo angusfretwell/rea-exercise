@@ -26,7 +26,7 @@ export default class Properties extends React.Component {
   }
 
   render() {
-    if (this.state.errorMessage) {
+    if (this.props.error) {
       return (
         <div>Something went wrong</div>
       );

@@ -38,8 +38,8 @@ class PropertyStore {
     this.saved = [];
   }
 
-  handlePropertiesFailed(errorMessage) {
-    this.errorMessage = errorMessage;
+  handlePropertiesFailed(error) {
+    this.error = error;
   }
 }
 
