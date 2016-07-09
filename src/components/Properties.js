@@ -28,7 +28,7 @@ export class Properties extends React.Component {
   render() {
     if (this.props.error) {
       return (
-        <div>Something went wrong</div>
+        <p>Something went wrong...</p>
       );
     }
 
